@@ -1,4 +1,4 @@
-VmInclude:__BASE__/vmiis/common-code/toolbar/back.html
+VmInclude:__COMPONENT__/toolbar/back.html
 <section>
     <div id=qe_ID style='padding:50px'>
         <ui id=items__ID>
@@ -8,15 +8,15 @@ VmInclude:__BASE__/vmiis/common-code/toolbar/back.html
 <script>
     function F__ID(){
         //---------------------------------
-        VmInclude:__BASE__/vmiis/common-code/toolbar/back.js
-        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__COMPONENT__/toolbar/back.js
+        VmInclude:__COMPONENT__/style/ease-in-out.js
         //---------------------------------
         var _module_list=function(){
             var L=$vm.module_list,A='woolcock_CFS_NRS_',B=$vm.hosting_path+'/woolcock-imr/CFS_NRS';
             var v={
                 app_id:A,
             }
-            VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/navigation/participant_and_task_module_list.js
+            VmInclude:__HOST__/modules/navigation/participant_and_task_module_list.js
         }
         _module_list();
         //---------------------------------------------
@@ -93,7 +93,7 @@ VmInclude:__BASE__/vmiis/common-code/toolbar/back.html
     #D__ID,#pvdiv__ID{
       font-size:10pt;
       font-family: Verdana,Helvetica,Arial,sans-serif;
-      background: url("__BASE__/vmiis/common-code/image/texture.png");
+      background: url("__COMPONENT__/image/texture.png");
     }
     #D__ID{
       /*background-color:#fff;*/

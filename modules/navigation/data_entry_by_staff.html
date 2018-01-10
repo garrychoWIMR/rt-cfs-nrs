@@ -2,13 +2,13 @@
     <div id=toolbar__ID>
         <a id=back__ID>Back</a><span class=tab__ID></span><span id=name__ID></span>
     </div>
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/navigation/task_links.html
+    VmInclude:__HOST__/modules/navigation/task_links.html
 </section>
 <script>
       function F__ID(){
             //---------------------------------------------
-            VmInclude:__BASE__/vmiis/Common-Code/navigation/navigation.js
-            VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+            VmInclude:__COMPONENT__/navigation/navigation.js
+            VmInclude:__COMPONENT__/style/ease-in-out.js
             var _op,_module=$vm.module_list[$vm.vm['__ID'].name],_app_id=_module.var.app_id;
             //---------------------------------------------
             $('#D__ID').on('load',function(){
@@ -75,5 +75,5 @@
       }
 </script>
 <style>
-    VmInclude:__BASE__/vmiis/Common-Code/navigation/navigation.css
+    VmInclude:__COMPONENT__/navigation/navigation.css
 </style>

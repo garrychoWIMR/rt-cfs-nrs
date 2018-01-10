@@ -1,5 +1,5 @@
 <section>
-    VmInclude:__BASE__/vmiis/Common-Code/toolbar/back_save.html
+    VmInclude:__COMPONENT__/toolbar/back_save.html
 	<form id=F__ID>
         <table id=tb__ID style='width:900px;'>
             <colgroup><col style='width:250px'/>
@@ -17,7 +17,7 @@
             	    <!-- -->
                     <tr><td colspan=3 style='text-align:left'><br><b> How fatigued do you feel right now? Please make a single mark on the line below
                             </b><br><br></td></tr>
-                            <tr><td colspan=3 style='text-align:left'><p><img src="__BASE__/woolcock-imr/CFS_NRS/images/lion.png" style='width:200px' style=""></p>The Lion is very fatigued – awake -no energy - but not sleepy<br/><br/></td></tr>
+                            <tr><td colspan=3 style='text-align:left'><p><img src="__HOST__/images/lion.png" style='width:200px' style=""></p>The Lion is very fatigued – awake -no energy - but not sleepy<br/><br/></td></tr>
 
                             <tr><td colspan=3 style='text-align:center'><br>Fatigue</td></tr>
                             <tr><td>Not at all fatigued</td><td data-id=Mental_Fatigue data-custom=1></td><td>The Worst Fatigue Imaginable</td></tr>
@@ -28,8 +28,8 @@
 <script>
     function F__ID(){
         //----------------------------------
-        VmInclude:__BASE__/woolcock-imr/CFS_NRS/common-code/participant.js
-        VmInclude:__BASE__/vmiis/Common-Code/grid/form.js
+        VmInclude:__HOST__/common-code/participant.js
+        VmInclude:__COMPONENT__/grid/form.js
         var _task_fields;
         //----------------------------------
         $('#D__ID').on('load',function(){
@@ -84,8 +84,8 @@
     }
 </script>
 <style>
-VmInclude:__BASE__/vmiis/Common-Code/toolbar/toolbar.css
-VmInclude:__BASE__/vmiis/Common-Code/grid/form.css
+VmInclude:__COMPONENT__/toolbar/toolbar.css
+VmInclude:__COMPONENT__/grid/form.css
     #tb__ID input[type=radio]{
         cursor:pointer;
     }

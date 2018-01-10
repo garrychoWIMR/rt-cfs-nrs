@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
 <script>
-<!DOCTYPE html>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
-<script>
 $vm={}; $VmAPI={};
 $(document).ready(function(){
     //--------------------------------------------------------
-    if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
-        $vm.hosting_path    =window.location.protocol+'//'+window.location.host;
-        $vm.common          =window.location.protocol+'//'+window.location.host;
-        $vm.debug		    =true;
-    }
-    else{
-        $vm.hosting_path    ="https://rt.woolcock.org.au/github"
-        $vm.common          ="https://rt.woolcock.org.au/github";
-    }
+	//get hosting path
+	var href = window.location.href.split('?')[0];
+	var path=href.split('/index.html')[0];
+	var lastChar=path[path.length-1];
+	if(lastChar=='/') path=path.substring(0,path.length-1);
+	$vm.hosting_path=path;
+	if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost')	$vm.debug =true;
+	//--------------------------------------------------------
+    //$vm.common          ="https://rt.woolcock.org.au/github";
     //--------------------------------------------------------
     $vm.server		    ="production";
     $vm.repository      ="woolcock-imr/rt-cfs-nrs";
@@ -24,7 +21,7 @@ $(document).ready(function(){
     $vm.debug_message	  =true;
     //--------------------------------------------------------
 	var start=function(){
-		var url=$vm.url('__BASE__/'+$vm.repository+'/version.html?_=')+new Date().getTime();
+		var url=$vm.url('version.html?_=')+new Date().getTime();
 		if($vm.debug_message===true) console.log('load module from '+url);
         $.get(url,function(new_ver){ $vm.version=new_ver.trim(); load_vmapi();},'text')
 
@@ -34,9 +31,9 @@ $(document).ready(function(){
 
 	}
 	//--------------------------------------------------------
-    var load_vmapi   =function(){ load_js($vm.url('__BASE__/vmiis/VmAPI/distribution/vmapi.min.js'),load_vm);	}
-    var load_vm      =function(){ load_js($vm.url('__BASE__/vmiis/VmFramework/distribution/vmframework.min.js'),init);}
-    var init         =function(){ $vm.init({callback:function(){$vm.load_first_module({url:$vm.hosting_path+'/'+$vm.repository+'/modules/frame/layout.html'}); last();  }});	}
+	var load_vmapi   =function(){ load_js($vm.url('https://vmiis.github.io/api/distribution/vmapi.min.js'),load_vm);	}
+	var load_vm      =function(){ load_js($vm.url('https://vmiis.github.io/framework/distribution/vmframework.min.js'),init);}
+    var init         =function(){ $vm.init({callback:function(){$vm.load_first_module({url:'modules/frame/layout.html'}); last();  }});	}
 	//--------------------------------------------------------
 	var load_js=function(url,next){
 		var ver=localStorage.getItem(url+"_ver");
@@ -56,8 +53,14 @@ $(document).ready(function(){
 	}
 	//--------------------------------------------------------
 	$vm.url=function(text){
-        var re1=new RegExp('__BASE__/'+$vm.repository, 'g');             text=text.replace(re1,$vm.hosting_path+'/'+$vm.repository);
-        var re2=new RegExp('__BASE__', 'g'); 	                         text=text.replace(re2,$vm.common);
+		var host=window.location.protocol+'//'+window.location.host;
+		text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
+        text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__COMPONENT__/');
+		text=text.replace(/__HOST__\//g,$vm.hosting_path+'/');
+		if(location.hostname=='127.0.0.1' || location.hostname=='localhost')  text=text.replace(/__COMPONENT__\//g,host+'/vmiis/component/');
+        else text=text.replace(/__COMPONENT__\//g,'https://vmiis.github.io/component/');
+        //var re1=new RegExp('__BASE__/'+$vm.repository, 'g');             text=text.replace(re1,$vm.hosting_path+'/'+$vm.repository);
+        //var re2=new RegExp('__BASE__', 'g'); 	                         text=text.replace(re2,$vm.common);
         var re3=new RegExp('__VER__', 'g'); 	                         text=text.replace(re3,$vm.version);
         var re4=new RegExp('/master/', 'g');	                         text=text.replace(re4,'/');
         var re5=new RegExp('/blob/', 'g');		                         text=text.replace(re5,'/blob/master/');
@@ -86,7 +89,7 @@ var last=function(){
 //--------------------------------------------------------
 var last_last=function(){
     jsN++; if(jsN===4){
-        if($vm.module_list['alert_dialog_module']===undefined) $vm.module_list['alert_dialog_module']={table_id:'--------',url:'__BASE__/vmiis/Common-Code/dialog/alert_dialog_module.html'};
+        if($vm.module_list['alert_dialog_module']===undefined) $vm.module_list['alert_dialog_module']={table_id:'--------',url:'__COMPONENT__/dialog/alert_dialog_module.html'};
         $vm.load_module_by_name('alert_dialog_module','',{})
     }
 }

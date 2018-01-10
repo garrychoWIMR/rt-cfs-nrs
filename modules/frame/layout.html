@@ -1,16 +1,16 @@
 <section>
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/frame/slider.html
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/frame/header.html
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/frame/header.m.html
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/frame/content.html
-    VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/frame/footer.html
+    VmInclude:__HOST__/modules/frame/slider.html
+    VmInclude:__HOST__/modules/frame/header.html
+    VmInclude:__HOST__/modules/frame/header.m.html
+    VmInclude:__HOST__/modules/frame/content.html
+    VmInclude:__HOST__/modules/frame/footer.html
 </section>
 <script>
     function F__ID(){
         //------------------------------------
-        $vm.module_list.home                    ={table_id:'',url:$vm.hosting_path+'/'+$vm.repository+'/modules/frame/home.html'};
-        $vm.module_list.navigation              ={table_id:'',url:$vm.hosting_path+'/'+$vm.repository+'/modules/navigation/main.html'};
-        $vm.module_list.participant_login       ={table_id:'',url:$vm.hosting_path+'/'+$vm.repository+'/modules/participant/participant_login.html'};
+        $vm.module_list.home                    ={table_id:'',url:'__HOST__/modules/frame/home.html'};
+        $vm.module_list.navigation              ={table_id:'',url:'__HOST__/modules/navigation/main.html'};
+        $vm.module_list.participant_login       ={table_id:'',url:'__HOST__/modules/participant/participant_login.html'};
         //------------------------------------
         var on_load=function(){
             _header_opacity_Home="0.8"
@@ -19,7 +19,7 @@
             login_changed();
         };
         //------------------------------------
-        VmInclude:__BASE__/vmiis/Common-Code/layout/main_layout_process.js
+        VmInclude:__COMPONENT__/layout/main_layout_process.js
         //------------------------------------
     }
 </script>

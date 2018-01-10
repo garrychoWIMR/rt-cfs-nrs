@@ -1,12 +1,12 @@
 <section>
-    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.html
+    VmInclude:__COMPONENT__/grid/grid.html
 </section>
 <script>
     function F__ID(){
         //-------------------------------------
-        VmInclude:__BASE__/vmiis/Common-Code/grid/grid.js
-        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
-        VmInclude:__BASE__/woolcock-imr/CFS_NRS/common-code/task.js
+        VmInclude:__COMPONENT__/grid/grid.js
+        VmInclude:__COMPONENT__/style/ease-in-out.js
+        VmInclude:__HOST__/common-code/task.js
         //-------------------------------------
         _task_fields="duration_0,hits_0,omissions_0,commissions_0,duration_1,hits_1,omissions_1,commissions_1,duration_2,hits_2,omissions_2,commissions_2,duration_3,hits_3,omissions_3,commissions_3,duration_4,hits_4,omissions_4,commissions_4,duration_5,hits_5,omissions_5,commissions_5,duration_6,hits_6,omissions_6,commissions_6";
         _fields="_Form,Status|S2,Notes|NT,Participant,"+_task_fields;
@@ -31,5 +31,5 @@
     }
 </script>
 <style>
-    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.css
+    VmInclude:__COMPONENT__/grid/grid.css
 </style>

@@ -1,5 +1,5 @@
 <section>
-    VmInclude:__BASE__/vmiis/Common-Code/toolbar/back_save.html
+    VmInclude:__COMPONENT__/toolbar/back_save.html
 	<form id=F__ID>
         <table id=tb__ID style='width:700px;'>
             <tr><td colspan=2 class='header__ID'>THE KAROLINSKA SLEEPINESS SCALE (KSS)<input style='border:0;width:0;height:0' /></td></tr>
@@ -9,7 +9,7 @@
                 <u style='cursor:pointer;float:right;' id=Participant_r__ID>Remove</u>
             </td></tr>
             <tr><td colspan=2 class=' '><br/><p style='text-align:center;color:#000000; font-size:12px'>Please indicate your sleepiness during the last 5 minutes. Give yourself a rating by clicking in the appropriate box. Remember that you may also use intermediate steps.</p><br/></td></tr>
-            <tr><td colspan=2 class=' '><p><img src="__BASE__/woolcock-imr/CFS_NRS/images/bear.png" style='width:200px'></p>The Bear is asleep and is at the very end point of this sleepiness scale!<br/><br/></td></tr>
+            <tr><td colspan=2 class=' '><p><img src="__HOST__/images/bear.png" style='width:200px'></p>The Bear is asleep and is at the very end point of this sleepiness scale!<br/><br/></td></tr>
             <tr><td data-id=KSS data-custom=1 style='width:50px;border:0;'></td><td style='border: 0;padding:5px'><input class=modified_radio__ID type=radio value=1  id=KSS__ID name=KSS ><label for=KSS__ID class=rb__ID>1 - Very Alert</label></td></tr>
         
          <tr><td style='width:50px;border:0;'></td><td style='border: 0;padding:5px'><input class=modified_radio__ID type=radio value=2  id=tr_kss2 name=KSS ><label for=tr_kss2 class=rb__ID>2 -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td></tr>
@@ -25,9 +25,9 @@
 <script>
     function F__ID(){
         //----------------------------------
-        VmInclude:__BASE__/vmiis/Common-Code/grid/form.js
-        VmInclude:__BASE__/woolcock-imr/CFS_NRS/common-code/participant.js
-        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__COMPONENT__/grid/form.js
+        VmInclude:__HOST__/common-code/participant.js
+        VmInclude:__COMPONENT__/style/ease-in-out.js
         //----------------------------------
         $('#D__ID').on('load',function(){
             _init();
@@ -58,8 +58,8 @@
     }
 </script>
 <style>
-    VmInclude:__BASE__/vmiis/Common-Code/toolbar/toolbar.css
-    VmInclude:__BASE__/vmiis/Common-Code/grid/form.css
+    VmInclude:__COMPONENT__/toolbar/toolbar.css
+    VmInclude:__COMPONENT__/grid/form.css
     .rb__ID{
         font-size: 14px;
         padding-left: 5px;

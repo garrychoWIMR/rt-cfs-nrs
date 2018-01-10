@@ -15,25 +15,25 @@
             </ul>
             <br>
         </div>
-        VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/navigation/task_links.html
+        VmInclude:__HOST__/modules/navigation/task_links.html
     </div>
 </section>
 <script>
       function F__ID(){
             //---------------------------------------------
-            VmInclude:__BASE__/vmiis/Common-Code/navigation/navigation.js
-            VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+            VmInclude:__COMPONENT__/navigation/navigation.js
+            VmInclude:__COMPONENT__/style/ease-in-out.js
             //---------------------------------------------
             _app_id='woolcock_CFS_NRS_';
             //---------------------------------------------
             var _module_list=function(){
-                var L=$vm.module_list,A=_app_id,B=$vm.hosting_path+'/woolcock-imr/CFS_NRS';
+                var L=$vm.module_list,A=_app_id,B='__HOST__';
                 var v={
                     app_id:_app_id,
                 }
                 L[A+'data_entry_by_staff']=                  {table_id:'20010387',var:v,url:B+'/modules/navigation/data_entry_by_staff.html'};
                 L[A+'data_entry_by_participant']=            {table_id:'20010388',var:v,url:B+'/modules/navigation/data_entry_by_participant.html'};
-                VmInclude:__BASE__/woolcock-imr/CFS_NRS/modules/navigation/participant_and_task_module_list.js
+                VmInclude:__HOST__/modules/navigation/participant_and_task_module_list.js
             }
             _module_list();
             //---------------------------------------------
@@ -49,7 +49,7 @@
       #D__ID,#pvdiv__ID{
           font-size:10pt;
           font-family: Verdana,Helvetica,Arial,sans-serif;;
-          background: url("__BASE__/vmiis/SaaS/images/fresh_snow.png");
+          background: url("https://rt.woolcock.org.au/github/vmiis/SaaS/images/fresh_snow.png");
       }
       #D__ID{
           /*background-color:#fff;*/
