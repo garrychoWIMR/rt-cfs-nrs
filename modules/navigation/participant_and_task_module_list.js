@@ -39,6 +39,8 @@ L[A+'Screening_Canadian']={table_id:'20010404',var:v,url:B+'/modules/task/Canadi
 L[A+'Screening_Canadian_form']={table_id:'20010404',var:v,url:B+'/modules/task/Canadian_form.html'};
 L[A+'Screening_SFH']={table_id:'20010405',var:v,url:B+'/modules/task/short_form_survey_instrument.html',notes: 'Screening Short form Health Survey', form_module:A+ 'Screening_SFH_form', task: 'Screening Short Form Health Survey (SF-36)'};
 L[A+'Screening_SFH_form']={table_id:'20010405',var:v,url:B+'/modules/task/short_form_survey_instrument.form.html'};
+L[A+'VISIT_RSQW']={table_id:'--------',var:v,url:B+'/modules/task/RSQW.html',notes: 'Restorative Sleep Questionnaire (Weekly Version)', form_module:A+ 'VISIT_RSQW_Form', task: 'Restorative Sleep Questionnaire (Weekly Version'};
+L[A+'VISIT_RSQW_form']={table_id:'---------',var:v,url:B+'/modules/task/RSQW.form.html'};
 
 
 //Night 1 - High Density Night
